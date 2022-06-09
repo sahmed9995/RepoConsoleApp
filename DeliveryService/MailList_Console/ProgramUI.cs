@@ -66,7 +66,7 @@ using MailList_Repository;
             System.Console.WriteLine("Enter the delivery date (YYYY, MM, DD):");
             DateTime delDate = Convert.ToDateTime(Console.ReadLine());
 
-            System.Console.WriteLine("Please select a number for the status of the order:\n" +
+            System.Console.WriteLine("Please select a number for the STATUS of the order:\n" +
             "1. Scheduled\n" +
             "2. EnRoute\n" +
             "3. Completed\n" +
@@ -79,13 +79,13 @@ using MailList_Repository;
                 "4" => OrderStatus.Canceled
             };
 
-            System.Console.WriteLine("Please enter the item number of the order:");
+            System.Console.WriteLine("Please enter the ITEM NUMBER of the order:");
             double itemNum = Convert.ToDouble(Console.ReadLine());
 
-            System.Console.WriteLine("Please enter the quantity of the item for the order:");
+            System.Console.WriteLine("Please enter the QUANTITY of the item for the order:");
             double itemQuantity = Convert.ToDouble(Console.ReadLine());
 
-            System.Console.WriteLine("Please enter the customer ID number for the order:");
+            System.Console.WriteLine("Please enter the CUSTOMER ID NUMBER for the order:");
             double custID = Convert.ToDouble(Console.ReadLine());
 
             MailList newOrder = new MailList(ordDate, delDate, status, itemNum, itemQuantity, custID);
@@ -101,7 +101,10 @@ using MailList_Repository;
 
             List<MailList> allOrders = _repo.ListAll();
 
-            System.Console.WriteLine("These are all the orders that are enroute and complete:\n");
+            Console.Clear();
+
+            System.Console.WriteLine("These are all the orders that are enroute and complete:\n" +
+            "--------------------------------------------------");
 
 
             foreach (MailList order in allOrders)
@@ -113,6 +116,7 @@ using MailList_Repository;
                     System.Console.WriteLine($"Item Number: {order.ItemNum}\n");
                     System.Console.WriteLine($"Item Quantity: {order.ItemQuantity}\n");
                     System.Console.WriteLine($"Customer ID Number: {order.CustID}\n");
+                    System.Console.WriteLine("--------------------------------------------\n");
                 } else if (order.Status == OrderStatus.Complete) {
                     System.Console.WriteLine($"Date Ordered: {order.OrdDate}\n");
                     System.Console.WriteLine($"Date of Delivery or Expected Delivery: {order.DelDate}\n");
@@ -120,6 +124,7 @@ using MailList_Repository;
                     System.Console.WriteLine($"Item Number: {order.ItemNum}\n");
                     System.Console.WriteLine($"Item Quantity: {order.ItemQuantity}\n");
                     System.Console.WriteLine($"Customer ID Number: {order.CustID}\n");
+                    System.Console.WriteLine("--------------------------------------------\n");
                 }
             }
 
@@ -130,41 +135,44 @@ using MailList_Repository;
 
             Console.Clear();
 
-            System.Console.WriteLine("Please give the customer ID number of the order you would like to update:");
+            System.Console.WriteLine("Please give the previous CUSTOMER ID NUMBER of the order you would like to update:");
 
             double custID = Convert.ToDouble(Console.ReadLine());
 
             MailList updatedOrder = new MailList();
 
-            
             if (_repo.UpdateOrder(custID, updatedOrder)) {
                 System.Console.WriteLine("Enter the updated ordered date (YYYY, MM, DD):");
-            DateTime ordDate = Convert.ToDateTime(Console.ReadLine());
+                DateTime ordDate = Convert.ToDateTime(Console.ReadLine());
 
-            System.Console.WriteLine("Enter the updated date for delivery (YYYY, MM, DD):");
-            DateTime delDate = Convert.ToDateTime(Console.ReadLine());
+                System.Console.WriteLine("Enter the updated date for delivery (YYYY, MM, DD):");
+                DateTime delDate = Convert.ToDateTime(Console.ReadLine());
 
-                System.Console.WriteLine("Please select a number for the updated status of the order:\n" +
-            "1. Scheduled\n" +
-            "2. EnRoute\n" +
-            "3. Completed\n" +
-            "4. Canceled");
-            string ordStatus = Console.ReadLine();
-            updatedOrder.Status = ordStatus switch {
+                System.Console.WriteLine("Please select a number for the updated STATUS of the order:\n" +
+                "1. Scheduled\n" +
+                "2. EnRoute\n" +
+                "3. Completed\n" +
+                "4. Canceled");
+                string ordStatus = Console.ReadLine();
+                updatedOrder.Status = ordStatus switch {
                 "1" => OrderStatus.Scheduled,
                 "2" => OrderStatus.EnRoute,
                 "3" => OrderStatus.Complete,
                 "4" => OrderStatus.Canceled
-            };
+                };
 
-            System.Console.WriteLine("Please enter the updated item number of the order:");
-            updatedOrder.ItemNum = Convert.ToDouble(Console.ReadLine());
+                System.Console.WriteLine("Please enter the updated ITEM NUMBER of the order:");
+                updatedOrder.ItemNum = Convert.ToDouble(Console.ReadLine());
 
-            System.Console.WriteLine("Please enter the updated quantity of the item for the order:");
-            updatedOrder.ItemQuantity = Convert.ToDouble(Console.ReadLine());
+                System.Console.WriteLine("Please enter the updated QUANTITY of the item for the order:");
+                updatedOrder.ItemQuantity = Convert.ToDouble(Console.ReadLine());
 
-            System.Console.WriteLine("Please enter the updated customer ID number for the order:");
-            updatedOrder.CustID = Convert.ToDouble(Console.ReadLine());
+                System.Console.WriteLine("Please enter the updated CUSTOMER ID NUMBER for the order:");
+                updatedOrder.CustID = Convert.ToDouble(Console.ReadLine());
+
+                MailList UpdatedOrder = new MailList(ordDate, delDate, updatedOrder.Status, updatedOrder.ItemNum, updatedOrder.ItemQuantity, updatedOrder.CustID);
+            
+                _repo.AddDeliveryToHistory(UpdatedOrder);
 
                 System.Console.WriteLine("The order has been sucessfully updated!");
             } else {
