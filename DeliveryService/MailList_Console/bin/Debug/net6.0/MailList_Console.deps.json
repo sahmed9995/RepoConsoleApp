@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MailList_Console/1.0.0": {
+        "dependencies": {
+          "MailList_Repository": "1.0.0"
+        },
+        "runtime": {
+          "MailList_Console.dll": {}
+        }
+      },
+      "MailList_Repository/1.0.0": {
+        "runtime": {
+          "MailList_Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MailList_Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MailList_Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

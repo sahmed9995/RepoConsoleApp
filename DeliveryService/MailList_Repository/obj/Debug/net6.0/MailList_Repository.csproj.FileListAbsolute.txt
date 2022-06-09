@@ -1,0 +1,12 @@
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.csproj.AssemblyReference.cache
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.AssemblyInfoInputs.cache
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.AssemblyInfo.cs
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.csproj.CoreCompileInputs.cache
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\bin\Debug\net6.0\MailList_Repository.deps.json
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\bin\Debug\net6.0\MailList_Repository.dll
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\bin\Debug\net6.0\MailList_Repository.pdb
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.dll
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\refint\MailList_Repository.dll
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\MailList_Repository.pdb
+C:\Users\ssagl\ElevenFiftyProjects\codingFoundations\assignments\RepoConsoleApp\DeliveryService\MailList_Repository\obj\Debug\net6.0\ref\MailList_Repository.dll
